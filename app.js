@@ -1,5 +1,6 @@
 const express = require("express")
 const mongoose = require("mongoose")
+const cros = require("cors")
 const employeRoute = require("./routes/employeRoute")
 const leagerRoutes = require("./routes/leagerRoutes")
 require("dotenv/config")
@@ -8,6 +9,8 @@ require("dotenv/config")
 const app = express()
 
 app.use(express.json())
+app.use(cros())
+
 app.get("/",(req,res)=>{
     res.send("home")
 })
